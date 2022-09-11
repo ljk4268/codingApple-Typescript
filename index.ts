@@ -1,43 +1,39 @@
-// 변수에 타입지정이 가능하다. 
-let 이름 : string = 'kim';
-
-// 이 변수에는 문자열로 된 배열만 들어올 수 있다. 라는 의미.
-let 이름배열 : string[] = ['kim','park']
-
-// name? : 물음표의 의미는 name속성이 옵션이라는 뜻. 
-let 이름오브젝트 : {name? : string} = { name : 'kim' }
+// Union Type : 타입 2개 이상 합친 새로운 타입
+let 회원 : number | string = 'kim';
 
 
-// 타입저장하는 방법
-type Mytype = string | number;
+// 숫자 or 문자가 가능한 array / object 타입지정
+let 회원들 : (number|string)[] = [1,2,3];
+let 오브젝트 : { a : string | number }= { a : 123 }
 
-// 문자열 혹은 숫자가 들어올 수 있다! : |
-let newName : Mytype = 123;
-
-
-
-// 함수의 타입지정
-// 파라미터로 number : 함수( x : number )
-// 리턴값으로 number : 함수( x : number ) : number
-function 함수( x : number ) : number{
-  return x * 2
-}
-
-// array에 쓸 수 있는 tuple타입
-type Member = [number, boolean];
-let john:Member = [123, true];
-
-// object에 타입지정해야할 속성이 너무 많으면
-// 글자로된 모든 object 속성의 타입은 : string
-type Member1 = {
-  [key : string ] : string
-}
-let min : Member1 = {name : 'kim', age : '123'}
+// any 타입 : 모든 자료형 허용해줌
+// 그럼 타입스크립트 쓰는 이융가 없음. >> 타입실드 해제문법임.
+let 이름 : any;
+// 이름 = 123;
+// 이름 = true;
+이름 = [];
 
 
-class User {
-  name : string;
-  constructor(name : string){
-    this.name = name;
-  }
-}
+// unknown 타입 : any타입과 비슷하게 모든 자료형을 허용해줌
+// any보다 안전한 이유는 unknown일지라도 타입이 다른경우 연산을 해주지 않음. 
+// 정확한 타입끼리의 연산만 허락해줌. 
+let 이름임 : unknown;
+이름임 = 123;
+이름임 = {};
+
+
+// 아래와 같은 상황일 때 any는 버그를 잡아주지 않지만 
+// unknown은 버그를 잡아준다.
+// let 변수1 : string = 이름임;
+
+// 타입이 맞는데 연산이 안되는 경우 
+// string타입에 + 1은 허용 
+// number타입에 + 1은 허용 
+// string | number 타입에 + 1은 비허용 : string 또는 number 타입이기때문에 확정적으로 타입을 지정한게 아니니까! 
+let 나이 : string | number;
+
+
+let user : string = 'kim';
+let age1 : unknown = undefined;
+let marrid1 : boolean = false;
+let 철수 : unknown = [user, age1, marrid1]

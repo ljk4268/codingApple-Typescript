@@ -1,21 +1,29 @@
-// 변수에 타입지정이 가능하다. 
-let 이름 = 'kim';
-// 이 변수에는 문자열로 된 배열만 들어올 수 있다. 라는 의미.
-let 이름배열 = ['kim', 'park'];
-// name? : 물음표의 의미는 name속성이 옵션이라는 뜻. 
-let 이름오브젝트 = { name: 'kim' };
-// 문자열 혹은 숫자가 들어올 수 있다! : |
-let newName = 123;
-// 함수의 타입지정
-// 파라미터로 number : 함수( x : number )
-// 리턴값으로 number : 함수( x : number ) : number
-function 함수(x) {
-    return x * 2;
-}
-let john = [123, true];
-let min = { name: 'kim', age: '123' };
-class User {
-    constructor(name) {
-        this.name = name;
-    }
-}
+// Union Type : 타입 2개 이상 합친 새로운 타입
+let 회원 = 'kim';
+// 숫자 or 문자가 가능한 array / object 타입지정
+let 회원들 = [1, 2, 3];
+let 오브젝트 = { a: 123 };
+// any 타입 : 모든 자료형 허용해줌
+// 그럼 타입스크립트 쓰는 이융가 없음. >> 타입실드 해제문법임.
+let 이름;
+// 이름 = 123;
+// 이름 = true;
+이름 = [];
+// unknown 타입 : any타입과 비슷하게 모든 자료형을 허용해줌
+// any보다 안전한 이유는 unknown일지라도 타입이 다른경우 연산을 해주지 않음. 
+// 정확한 타입끼리의 연산만 허락해줌. 
+let 이름임;
+이름임 = 123;
+이름임 = {};
+// 아래와 같은 상황일 때 any는 버그를 잡아주지 않지만 
+// unknown은 버그를 잡아준다.
+// let 변수1 : string = 이름임;
+// 타입이 맞는데 연산이 안되는 경우 
+// string타입에 + 1은 허용 
+// number타입에 + 1은 허용 
+// string | number 타입에 + 1은 비허용 : string 또는 number 타입이기때문에 확정적으로 타입을 지정한게 아니니까! 
+let 나이;
+let user = 'kim';
+let age1 = undefined;
+let marrid1 = false;
+let 철수 = [user, age1, marrid1];
