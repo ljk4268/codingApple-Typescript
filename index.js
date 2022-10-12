@@ -1,39 +1,6 @@
-//대표적인 narrowing 방법 = typeof연산자
-// 어떤 변수가 타입이 아직 불확실하면 if문 등으로 narrowing해줘야한다. 
-function 내함수(x) {
-    if (typeof x === 'string') {
-        return x + '1';
-    }
-    else {
-        return x + 1;
-    }
-}
-function 다른함수(x) {
-    let array = [];
-    if (typeof x === 'number') {
-        array[0] = x;
-    }
-}
-// narrowing 문법 아니면 assertion문법(타입 덮어쓰기)
-//assertion문법의 용도 
-// 1. narrowing할 때 씁니다.
-// 2. 무슨 타입이 들어올지 100% 확실할 때 쓴다.
-function 또다른함수(x) {
-    let array = [];
-    array[0] = x; //왼쪽에 있는 변수를 number로 덮어주세요 라는 의미. 
-}
-// 숙제1. 
-function 클리닝함수(x) {
-    console.log(x);
-    let result = [];
-    x.forEach(x => {
-        if (typeof x === "string") {
-            result.push(Number(x));
-        }
-        else {
-            result.push(x);
-        }
-    });
-    console.log(result);
-}
-클리닝함수(['1', 2, '3']);
+// type 키워드로 변수를 만드는 것 : type alias
+// type변수 작명 관습 : 영어 대문자로 시작. || 변수명 + Type
+let 동물 = { name: 'kim', age: 20 };
+const 여친 = {
+    name: '엠버'
+};
