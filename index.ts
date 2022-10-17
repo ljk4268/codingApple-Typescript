@@ -1,30 +1,39 @@
-// type 키워드로 변수를 만드는 것 : type alias
-// type변수 작명 관습 : 영어 대문자로 시작. || 변수명 + Type
+//Literal types
+// 이름이라는 변수에 'kim'만 들어올 수 있음
+// const 변수와 유사하게 쓸 수 있음
+// 장점 : 변수에 뭐가 들어올지 더 엄격하게 관리가능
+// 장점 : 자동완성으로 편리함
 
-// type Animal = string | number | undefined;
+let 이름 : 'kim'
 
-// let 동물 : Animal = 123;
-type AinmalType = {name : string, age : number}
 
-let 동물 : AinmalType = {name : 'kim', age: 20}
+let 접니다: '대머리' | '솔로';
 
-// typescript 쓰면 object 자료 수정을 막을 수 있다. 
-// readonly : 읽기전용
+접니다 = '솔로'
 
-type Girlfriend = {
-  name? : string
-}
-const 여친 : Girlfriend = {
-  name : '엠버'
+function 함수(a : 'hello') :1 | 0{
+  return 1
 }
 
-//type 변수
-// union type으로 합치기
+함수('hello')
 
-type Name = string;
-type Age = number;
-type Person = Name | Age
+// Q 이런함수어떻게 만들죠 
+// 1. 가위 바위 보 중 1개만 입력가능
+// 2. 가위 바위 보 만 들어올 수 있는 array를 return 해야함
 
+function 가위바위보(a : '가위'|'바위'|'보') :('가위'|'바위'|'보')[]{
+  return ['가위']
 
+}
 
+//const 변수의 한계
+const 변수 = 'kim';
 
+var 자료 = {
+  name : 'kim';
+}
+
+function 내함수(a:'kim'){
+
+}
+내함수('kim')
