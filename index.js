@@ -1,17 +1,15 @@
-// 함수 type alias 부착하려면 함수표현식 써야한다. 
-let 함수 = function () {
-};
-// 
-let 회원정보 = {
-    name: 'kim',
-    plusOne(a) {
-        return a + 1;
-    }
-};
-회원정보.plusOne();
-//콜백함수 
-function 함수1(a) {
+let 제목 = document.querySelector('#title');
+// if ( 제목 != null ){
+//   제목.innerHTML = '반가워요'
+// }
+// if ( 제목 instanceof Element){
+//   제목.innerHTML = '반가워요'
+// }
+제목.innerHTML = '반가워요';
+let 링크 = document.querySelector('.link');
+if (링크 instanceof HTMLAnchorElement) {
+    링크.href = 'https://kakao.com';
 }
-function 함수2() {
-}
-함수1(함수2);
+let 버튼 = document.querySelector('#button');
+버튼 === null || 버튼 === void 0 ? void 0 : 버튼.addEventListener('click', function () {
+});
