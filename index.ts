@@ -1,21 +1,20 @@
-let 제목 = document.querySelector('#title') as Element;
-// if ( 제목 != null ){
-//   제목.innerHTML = '반가워요'
-// }
+class Person {
 
-// if ( 제목 instanceof Element){
-//   제목.innerHTML = '반가워요'
-// }
+  name :string;
 
-제목.innerHTML = '반가워요'
+  constructor(a :string){
+    this.name = a;
+  }
+  함수(a :string){
+    console.log('안녕' + a)
+  }
 
-let 링크 = document.querySelector('.link');
-if ( 링크 instanceof HTMLAnchorElement){
-  링크.href = 'https://kakao.com'
 }
 
-let 버튼 = document.querySelector('#button');
-버튼?.addEventListener('click', function(){
-  
-})
 
+let person1 = new Person('kim');
+let person2 = new Person('park');
+person1.함수('너?');
+
+console.log(person1)
+console.log(person2)
