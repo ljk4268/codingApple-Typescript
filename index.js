@@ -1,13 +1,21 @@
-class Person {
-    constructor(a) {
-        this.name = a;
+let square = {
+    color: 'red',
+    width: 100
+};
+let student = {
+    name: 'kim'
+};
+let teacher = {
+    name: 'kim',
+    age: 20
+};
+let 상품 = { brand: 'Samsung', serialNumber: 1360, model: ['TV', 'phone'] };
+let 장바구니 = [{ product: '청소기', price: 7000 }, { product: '삼다수', price: 800 }];
+let 오브젝트 = {
+    plus(a, b) {
+        return a + b;
+    },
+    minus(a, b) {
+        return a - b;
     }
-    함수(a) {
-        console.log('안녕' + a);
-    }
-}
-let person1 = new Person('kim');
-let person2 = new Person('park');
-person1.함수('너?');
-console.log(person1);
-console.log(person2);
+};
