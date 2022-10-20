@@ -1,5 +1,5 @@
 let firstname = 'kim';
-let age = 32;
+// let age: number = 32;
 let marrid = false;
 let member = ['kim', 'park'];
 let members = { member1: 'kim', member2: 'park' };

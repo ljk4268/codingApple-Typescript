@@ -1,62 +1,68 @@
-interface Square {color :string, width :number}
 
-let square :Square = {
-  color : 'red',
-  width : 100
+// 점 3개 붙이면 무제한 파라미터가 들어올 수 있다는 의미. 
+// 다른 파라미터가 있으면 맨 뒤에 사용해야 한다. 
+function 함수(...rest :number[]){
+  console.log(rest)
+
 }
 
-//interface는 extends로 복사가 가능하다. 
+함수(1,5,3,6,6)
 
-interface Student {name :string}
-interface Teacher extends Student {
-  age :number
+
+// destructurin 개념설명
+let {student, age} = {student : true, age : 20}
+let 오브젝트 = {student : true, age : 20}
+
+
+
+function 함수1({student, age}){
+
+  console.log(student, age)
+
 }
 
-type Animal = { name :string }
-type Cat = { age :number } & Animal
+함수1({student : true, age : 20})
 
+// 숙제 1. 숫자 여러개를 입력하면 최댓값을 return 해주는 함수를 만들어봅시다. 
 
+function solution(...num :number[]){
+  let result = 0;
 
-let student :Student = {
-  name : 'kim'
-}
-let teacher :Cat = {
-  name : 'kim',
-  age : 20
-}
+  num.forEach((element)=>{
 
-//숙제1
-interface Product {
-  brand :string,
-  serialNumber :number,
-  model :string[]
-}
+    if (result < element){
+      result = element
+    }
 
-let 상품 :Product = { brand : 'Samsung', serialNumber : 1360, model : ['TV', 'phone'] }
+  })
 
-//숙제2
-interface ShoppingBasket  {
-  product :string,
-  price :number
+  console.log(result)
+
 }
 
-interface Card extends ShoppingBasket {
-  card :boolean
+solution(6,3,7,2)
+
+// 숙제 2. 이렇게 생긴 object 자료를 파라미터로 입력할 수 있는 함수를 만들어봅시다. 
+
+type Obj = {
+  user :string,
+  comment :number[],
+  admin :boolean
 }
-let 장바구니 :ShoppingBasket[]= [ { product : '청소기', price : 7000 }, { product : '삼다수', price : 800 } ] 
+function solution2({user,comment,admin}:Obj){
 
 
-interface MathObj {
-  plus : (a:number, b:number) => number,
-  minus : (a:number, b:number) => number
 }
 
-let 오브젝트 :MathObj = {
-  plus(a,b){
-    return a + b
-  },
-  minus(a,b){
-    return a - b
-  }
-} 
+solution2({ user : 'kim', comment : [3,5,4], admin : false })
+
+
+//숙제 3. 이렇게 생긴 array 자료를 파라미터로 입력할 수 있는 함수를 만들어봅시다. 
+type Arr = (number | string | boolean)[];
+function solution3([a,b,c]:Arr){
+
+
+}
+
+solution3([40, 'wine', false])
 
