@@ -1,17 +1,6 @@
-// null & undefinde 타입체크하는 경우가 많다. 
-// && 연산자로 null & undefinde 타입체크하기 
-function 함수(a) {
-    if (a && typeof a === 'string') {
-        // a가 undefined면 if문 실행이 안되고
-        // a가 string이면 if문이 실행된다.
-    }
-}
-function 함수2(animal) {
-    if ('swim' in animal) {
-    }
-}
-function 함수3(x) {
-    if (x.wheel === '4개') {
-        console.log('x는 Car타입이에요');
-    }
-}
+// 함수에 사용하는 never 타입 
+// return값에 붙일 수 있는 never
+// return 값이 없어야함 
+// 함수실행이 끝나지 않아야한다. (endpoint가 없어야한다.)
+// endpoint가 무엇
+// 에러를 던지거나 while(true)문

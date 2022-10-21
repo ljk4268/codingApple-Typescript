@@ -1,33 +1,34 @@
-// null & undefinde 타입체크하는 경우가 많다. 
-// && 연산자로 null & undefinde 타입체크하기 
-function 함수(a :string | undefined){
-  if ( a && typeof a === 'string' ){
-    // a가 undefined면 if문 실행이 안되고
-    // a가 string이면 if문이 실행된다.
+class User {
+  //필드
+  //class에서 쓰는 public : 모든 자식들이 이용 가능
+  //pulic 키워드는 항상 강제로 부여가 되어있다.
+  // private는 class안에서 수정, 이용가능만 가능. 
+  name :string;
+  private familyName :string = 'kim';
+
+  //constructor :constructor는 파라미터를 제공해서 입력 받을 수 있다. 
+  constructor(name){
+    this.name =  this.familyName + name;
   }
-}
 
-
-
-type Fish = { swim: string };
-type Bird = { fly: string };
-function 함수2(animal: Fish | Bird) {
-  if ('swim' in animal){
-
+  이름변경함수(){
+    this.familyName = 'park';
   }
+
 }
 
-type Car = {
-  wheel : '4개',
-  color : string
-}
-type Bike = {
-  wheel : '2개',
-  color : string
-}
+let user = new User('minsu');
 
-function 함수3(x : Car | Bike){
-  if ( x.wheel === '4개' ){
-    console.log('x는 Car타입이에요')
+user.이름변경함수()
+
+
+class Person{
+
+  constructor(public name :string){
+    
   }
+
 }
+
+let 자식 = new Person('kim');
+
