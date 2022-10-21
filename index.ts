@@ -1,34 +1,43 @@
+// private, protected는 class{}안에서만 사용가능
+// private를 쓰면 class 확장된 곳에서는 사용이 불가능! : 확장된 class 사용불가능!!
+// extends 된 곳에서도 사용하고 싶으면 protected : 확장된 class 사용가능!! 
+
 class User {
-  //필드
-  //class에서 쓰는 public : 모든 자식들이 이용 가능
-  //pulic 키워드는 항상 강제로 부여가 되어있다.
-  // private는 class안에서 수정, 이용가능만 가능. 
-  name :string;
-  private familyName :string = 'kim';
+  protected x = 10;
+}
 
-  //constructor :constructor는 파라미터를 제공해서 입력 받을 수 있다. 
-  constructor(name){
-    this.name =  this.familyName + name;
+class NewUser extends User {
+  doThis(){
+    this.x = 20;
   }
+}
 
-  이름변경함수(){
-    this.familyName = 'park';
-  }
+let person = new NewUser();
+
+
+// static 키워드
+// static 키워드 붙이면 부모 class에만 직접 부여돼서 자식은 쓸 수 없다. 
+
+class User2 {
+
+  static skill = 'js';
+  intro = User2.skill + '전문가입니다';
 
 }
 
-let user = new User('minsu');
-
-user.이름변경함수()
+let 철수 = new User2();
 
 
-class Person{
+//숙제 : User3.addOne() 쓸 때마다 x가 증가하는 함수
 
-  constructor(public name :string){
-    
+class User3 {
+  private static x = 10;
+  public static y = 20;
+  
+  static addOne(num :number){
+    User3.x += num;
   }
-
 }
 
-let 자식 = new Person('kim');
+
 
