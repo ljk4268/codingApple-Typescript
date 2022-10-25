@@ -1,5 +1,10 @@
-namespace 네임스페이스 {
-  export type Name = string | number;
+
+
+let b :number= 10;
+
+// 글로벌타입 만들고 싶을 때 
+declare global {
+  type Dog = string;
 }
 
-let 변수 :네임스페이스.Name = 'kim';
+export {}

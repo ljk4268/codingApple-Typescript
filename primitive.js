@@ -1,1 +1,2 @@
-let 변수 = 'kim';
+let b = 10;
+export {};
