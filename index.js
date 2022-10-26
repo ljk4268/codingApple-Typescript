@@ -1,2 +1,2 @@
-console.log(a + 1);
-let b = 'kim';
+let 이름 = '김';
+let 나이 = 30;
