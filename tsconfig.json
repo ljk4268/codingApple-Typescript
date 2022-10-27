@@ -1,12 +1,8 @@
-// 컴파일 옵션! 
 {
   "compilerOptions": {
     "target": "es2016",
     "module": "esnext",
     "strictNullChecks": true,
-    "declaration": true,
-    // d.ts 파일을 글로벌 모듈로 만드는 법
-    // 여기 있는 타입들ㅇ른 글로벌하게 이용가능!
-    "typeRoots": ["./types"]
+    "declaration": true
   }
 }
